@@ -14,6 +14,11 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  width: 85%;
+}
+
+.single {
+  width: 100%;
 }
 
 .link {
@@ -55,7 +60,7 @@ body {
 }
 .save-wrapper {
   position: relative;
-  width: 75%;
+  width: 85%;
   margin: 1rem auto;
 }
 .save-button {
