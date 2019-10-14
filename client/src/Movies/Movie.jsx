@@ -7,7 +7,6 @@ const Movie = (props) => {
     const movieId = props.match.url;
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
-
        axios
         .get(`http://localhost:5000/api${movieId}`)
         .then(response => {
