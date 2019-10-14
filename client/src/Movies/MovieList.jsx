@@ -8,24 +8,24 @@ import '../index.css';
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
-  useEffect(() => {
+  useEffect( () => {
     const getMovies = () => {
       axios
         .get('http://localhost:5000/api/movies')
-        .then(response => {
-          setMovies(response.data);
+        .then( response => {
+          setMovies( response.data );
         })
         .catch(error => {
-          console.error('Server Error', error);
+          console.error( 'Server Error', error );
         });
     }
-    
+
     getMovies();
   }, []);
-  
+
   return (
     <div className="movie-list">
-      {movies.map(movie => (
+      {movies.map( movie => (
         <Link className="link" key={movie.id} to={`/movies/${movie.id}`}>
           <MovieCard key={movie.id} movie={movie} type='list' />
         </Link>
