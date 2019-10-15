@@ -5,9 +5,9 @@ import MovieCard from './MovieCard';
 const Movie = (props) => {
   const [movie, setMovie] = useState();
 
-  const movieUrl = `http://localhost:5000/api${ props.match.url }`;
+  const movieUrl = `http://localhost:5000/api/movies/${ props.match.params.movieId }`;
 
-  useEffect(() => {  
+  useEffect(() => {
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
     axios
