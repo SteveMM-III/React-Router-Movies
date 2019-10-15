@@ -4,12 +4,14 @@ import MovieCard from './MovieCard';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  useEffect(() => {
-    const movieId = props.match.url;
+
+  const movieUrl = `http://localhost:5000/api${ props.match.url }`;
+
+  useEffect(() => {  
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
     axios
-      .get( `http://localhost:5000/api${movieId}` )
+      .get( movieUrl )
       .then( response => {
         setMovie( response.data );
       })
@@ -17,13 +19,13 @@ const Movie = (props) => {
         console.error( error );
       });
 
-  }, [props.match.url] );
+  }, [ movieUrl ] );
 
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList( movie );
+  }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -32,7 +34,7 @@ const Movie = (props) => {
   return (
     <div className='save-wrapper'>
       <MovieCard movie={movie} type='single' />
-      <div className='save-button'>Save</div>
+      <div className='save-button' onClick={saveMovie}>Save</div>
     </div>
   );
 }
