@@ -9,20 +9,20 @@ const MovieCard = props => {
   return (
     <div className={`movie-card ${type}`}>
       <h2>{title}</h2>
+
       <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
+        Director: <em>{director}</em></div>
+
       <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
+        Metascore: <strong>{metascore}</strong></div>
+
       <h3>Actors</h3>
 
       <ul>
       {/* map over the stars creating list items for each */}
       {stars.map( star => (
         <li key={star} className="movie-star">
-          {star}
-        </li>
+          {star}</li>
       ))}
       </ul>
     </div>

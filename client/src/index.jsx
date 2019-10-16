@@ -7,8 +7,6 @@ import App from './App';
 
 ReactDOM.render(
     // wrap the app with a router
-    <Router>
-        <App />
-    </Router>,
+    <Router><App /></Router>,
     document.getElementById('root')
 );

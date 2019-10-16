@@ -32,8 +32,7 @@ const MovieList = props => {
           wrapped MovieCard component for each item */}
       {movies.map( movie => (
         <Link className="link" key={movie.id} to={`/movies/${movie.id}`}>
-          <MovieCard key={movie.id} movie={movie} type='list' />
-        </Link>
+          <MovieCard key={movie.id} movie={movie} type='list' /></Link>
       ))}
     </div>
   );
