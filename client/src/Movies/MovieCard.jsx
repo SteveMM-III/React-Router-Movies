@@ -2,8 +2,10 @@ import React from 'react';
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
+  // type used as class for css styling
   const type = props.type;
 
+  // return the MovieCard component
   return (
     <div className={`movie-card ${type}`}>
       <h2>{title}</h2>
@@ -15,11 +17,14 @@ const MovieCard = props => {
       </div>
       <h3>Actors</h3>
 
-      {stars.map(star => (
-        <div key={star} className="movie-star">
+      <ul>
+      {/* map over the stars creating list items for each */}
+      {stars.map( star => (
+        <li key={star} className="movie-star">
           {star}
-        </div>
+        </li>
       ))}
+      </ul>
     </div>
   );
 };

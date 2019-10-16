@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(
+    // wrap the app with a router
     <Router>
         <App />
     </Router>,
