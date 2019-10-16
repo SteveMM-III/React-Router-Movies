@@ -7,7 +7,8 @@ import MovieCard from './MovieCard';
 import '../index.css';
 
 const MovieList = props => {
-  const [movies, setMovies] = useState([])
+  const [movies, setMovies] = useState([]);
+  
   useEffect( () => {
     const getMovies = () => {
       // api call to get the list of movies
